@@ -161,31 +161,7 @@ def read_data(file_name):
 dir = os.getcwd()
 
 def main():
-    # load weights
-    weights = read_data(dir + '\\100-40-4\\w-100-40-4.csv')
-    bias = read_data(dir + '\\100-40-4\\b-100-40-4.csv')
-
-    input_data = np.array([[-1, 1, 1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, 1]]).astype(np.float32)
-    label_data = np.array([[3]])
-
-    input_num = 14
-    output_num = 4
-    lr = 1
-
-    network_1 = [
-        FullyConnectedLayer(input_num, 100, lr=lr, weights=weights[:14], bias=bias[0]),
-        ReLULayer(),
-        FullyConnectedLayer(100, 40, lr=lr, weights=weights[14:114], bias=bias[1]),
-        ReLULayer(),
-        FullyConnectedLayer(40, output_num, lr=lr, weights=weights[114:], bias=bias[2]),
-        SoftmaxOutput_CrossEntropyLossLayer()
-    ]
-
-    for i in range(1):  # train for 10 epochs
-
-        network_1 = network_forward(network_1, input_data, label_data)
-        network_1 = network_backward(network_1)
-
+    pass
 
 if __name__ == '__main__':
     main()
