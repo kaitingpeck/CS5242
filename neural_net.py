@@ -3,8 +3,6 @@ import os
 import csv
 
 ## Fully Connected layer
-
-
 class FullyConnectedLayer(object):
     def __init__(self, num_input, num_output, lr=1e-3, scale=2, weights=[], bias=[]):
         self.num_input = num_input
